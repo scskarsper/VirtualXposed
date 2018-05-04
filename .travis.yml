@@ -19,3 +19,14 @@ before_install:
 script:
   - cd VirtualApp
   - ./gradlew assembleRelease
+
+deploy:
+  provider: releases
+  api_key:
+    secure: fAzYx59PXj8d8Kq4D998YGW86omylsx0xG4aBNdfomNOx0DS7qwrqDDuPhJr+zRh9B0Yk9fNNbvbRCVZOPHBEe62bCfOjYSTI2WF3eGy5QUFfejzPqgy7tgKC9p0KQ6q5pe4l+TNmEX1DHaoic5q/QJ9Ih5wJqVoS1Lq1ogqw1H6x1VizmOb2YMYjJ1dSrI6bNKwv5Xa94x2DHY9vybEhqDy/R0y+Bxa00mR4O34LMahP7jY5ThoPFbbajCboIW4kC/yQWMHMQnnJTEAKw+9Vvco8cnLklC6mbATudjRWP4BJEogkgo1cSoS8PE+JNtz2oaCi9GgIZIFuzS2D7mvfHv+T9V6nNI2mD71cjQMEilQQpbhVuC7+aHQrq/BVIT1J/6t7AwwfD+vSsL7ZKiMTJrkLrVCtGLXqN8jS/pfx4Zf7ArBBLbNBAtuoijwmufjOAYLxtq5+cMX1Giha2j/UkZdTtiVmD47E4Sfz2zmPlK7yP59H6m1RoqKaj54AmtMhwrrUy67kgIjk2RcrV6WM8nT1M618/WxUCmwn/ovMVYcwTy2XCysdrG1WqbFCjQJvqraL0i7rhvDR/+MAKiSP3oFg1nK/4ThuAIC/+8z+HlEY2PHscbdgV937VcJIDx46ZpFf9amYnJlbL++bx69V6iPMYWuL6f7mlZSQAFu888=
+  file: /VirtualApp/app/build/outputs/apk/app-release.apk
+  skip_cleanup: true
+  on:
+    repo: scskarsper/VirtualXposed
+    branch: exposed
+
